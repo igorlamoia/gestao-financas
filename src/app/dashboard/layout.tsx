@@ -1,8 +1,8 @@
 import { AsideNavbar } from './components/aside/navbar';
-// export const metadata = {
-//   title: 'Finanças',
-//   description: 'Plataforma para controle de finanças pessoais',
-// }
+export const metadata = {
+  title: 'Finanças',
+  description: 'Plataforma para controle de finanças pessoais',
+};
 
 export default function RootLayout({
   children,

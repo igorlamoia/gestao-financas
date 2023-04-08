@@ -8,7 +8,7 @@ interface LiProps {
   active?: boolean;
 }
 
-export function Li({ href, imagePath, children, active }: LiProps) {
+export function Li({ href, imagePath, active, children }: LiProps) {
   return (
     <li className="relative">
       <Link

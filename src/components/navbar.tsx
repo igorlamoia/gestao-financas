@@ -1,11 +1,9 @@
-import Link from 'next/link';
-
 export function Navbar() {
   return (
     <nav>
       <ul>
         <li>
-          <Link href="/">Home</Link>
+          <a href="/">Home</a>
         </li>
       </ul>
     </nav>

@@ -1,8 +1,12 @@
+'use client';
+
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 import { Li } from './li';
 
 export function AsideNavbar() {
+  const activeSegment = usePathname(); // get the path from the url
   return (
     <aside className="bg-white text-black min-h-screen">
       <nav className="h-full flex flex-col">
@@ -14,10 +18,18 @@ export function AsideNavbar() {
           className="p-4"
         />
         <ul>
-          <Li href="/home">Home</Li>
-          <Li href="/dashboard">Dashboard</Li>
-          <Li href="/contas">Contas</Li>
-          <Li href="/graficos">Gráficos</Li>
+          <Li active={activeSegment === '/home'} href="/home">
+            Home
+          </Li>
+          <Li active={activeSegment === '/dashboard'} href="/dashboard">
+            Dashboard
+          </Li>
+          <Li active={activeSegment === '/contas'} href="/contas">
+            Contas
+          </Li>
+          <Li active={activeSegment === '/graficos'} href="/graficos">
+            Gráficos
+          </Li>
         </ul>
         <div className="mt-auto flex justify-center gap-3">
           {/* svg settings */}
