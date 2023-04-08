@@ -1,5 +1,5 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
 
 interface LiProps {
   href: string;
@@ -15,7 +15,7 @@ export function Li({ href, imagePath, children, active }: LiProps) {
         href={href}
         className={`flex items-center hover:bg-purple-100 gap-x-5 py-3 pr-11
         before:bg-purple-500 before:w-1 before:h-full before:absolute before:rounded-l-md
-        ${active ? "before:block text-purple-500" : "before:hidden"}
+        ${active ? 'before:block text-purple-500' : 'before:hidden'}
         `}
       >
         <div className="w-[90px] flex justify-center">

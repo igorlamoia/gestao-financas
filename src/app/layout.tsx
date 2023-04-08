@@ -1,8 +1,8 @@
-import "./globals.css";
+import './globals.css';
 
 export const metadata = {
-  title: "Finanças",
-  description: "Plataforma para controle de finanças pessoais",
+  title: 'Finanças',
+  description: 'Plataforma para controle de finanças pessoais',
 };
 
 export default function RootLayout({
