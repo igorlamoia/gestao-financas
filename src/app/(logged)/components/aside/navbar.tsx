@@ -5,8 +5,23 @@ import { usePathname } from 'next/navigation';
 
 import { Li } from './li';
 
+const links = [
+  {
+    href: '/dashboard',
+    label: 'Dashboard',
+  },
+  {
+    href: '/contas',
+    label: 'Contas',
+  },
+  {
+    href: '/graficos',
+    label: 'Gráficos',
+  },
+];
+
 export function AsideNavbar() {
-  const activeSegment = usePathname(); // get the path from the url
+  const path = usePathname(); // get the path from the url
   return (
     <aside className="bg-white text-black min-h-screen">
       <nav className="h-full flex flex-col">
@@ -18,21 +33,13 @@ export function AsideNavbar() {
           className="p-4"
         />
         <ul>
-          <Li active={activeSegment === '/home'} href="/home">
-            Home
-          </Li>
-          <Li active={activeSegment === '/dashboard'} href="/dashboard">
-            Dashboard
-          </Li>
-          <Li active={activeSegment === '/contas'} href="/contas">
-            Contas
-          </Li>
-          <Li active={activeSegment === '/graficos'} href="/graficos">
-            Gráficos
-          </Li>
+          {links.map(({ href, label }) => (
+            <Li key={href} href={href} path={path}>
+              {label}
+            </Li>
+          ))}
         </ul>
         <div className="mt-auto flex justify-center gap-3">
-          {/* svg settings */}
           <Image
             src="https://www.svgrepo.com/show/507735/help-circle.svg"
             width={20}

@@ -14,7 +14,7 @@ export default function RootLayout({
       <body>
         <main className="flex">
           <AsideNavbar />
-          {children}
+          <section className="p-4">{children}</section>
         </main>
       </body>
     </html>

@@ -6,9 +6,11 @@ interface LiProps {
   imagePath?: string;
   children: React.ReactNode;
   active?: boolean;
+  path: string;
 }
 
-export function Li({ href, imagePath, active, children }: LiProps) {
+export function Li({ href, imagePath, path, children }: LiProps) {
+  const active = path === href;
   return (
     <li className="relative">
       <Link
