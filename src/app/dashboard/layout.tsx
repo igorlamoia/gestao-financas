@@ -1,10 +1,9 @@
-import "./globals.css";
+import { AsideNavbar } from "./components/aside/navbar";
 
 export const metadata = {
   title: "Finanças",
   description: "Plataforma para controle de finanças pessoais",
 };
-
 export default function RootLayout({
   children,
 }: {
@@ -12,7 +11,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body>{children}</body>
+      <body>
+        <main className="flex">
+          <AsideNavbar />
+          {children}
+        </main>
+      </body>
     </html>
   );
 }
