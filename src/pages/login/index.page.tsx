@@ -11,11 +11,7 @@ export default function Login() {
     resolver: zodResolver(loginSchema),
   });
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isSubmitting },
-  } = loginForm;
+  const { handleSubmit } = loginForm;
 
   async function login(data: LoginDataType) {
     console.log(data);
