@@ -6,7 +6,7 @@ interface LiProps {
   imagePath?: string;
   children: React.ReactNode;
   active?: boolean;
-  path: string;
+  path: string | null;
 }
 
 export function Li({ href, imagePath, path, children }: LiProps) {
