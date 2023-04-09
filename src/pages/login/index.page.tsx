@@ -3,6 +3,7 @@ import { useForm, FormProvider } from 'react-hook-form';
 import { Form } from '@/components/form';
 import { LockClosedIcon } from '@heroicons/react/20/solid';
 import { zodResolver } from '@hookform/resolvers/zod';
+import axios from 'axios';
 
 import { loginSchema, LoginDataType } from './schema';
 
@@ -15,6 +16,15 @@ export default function Login() {
 
   async function login(data: LoginDataType) {
     console.log(data);
+    const { email, password } = data;
+    const { data: payload } = await axios.post('/api/login', {
+      email,
+      password,
+    });
+    const { data: verification } = await axios.post('/api/validate', {
+      jwt: payload.jwt,
+    });
+    console.log(verification);
   }
 
   return (

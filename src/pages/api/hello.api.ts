@@ -4,6 +4,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 type Data = {
   name: string;
 };
+const JWT_SECRET = 'financas_pessoais';
 
 export default function handler(
   req: NextApiRequest,
